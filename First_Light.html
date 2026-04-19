@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project First Light | Strategic Dossier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050505',
+                        goldLeaf: '#D4AF37',
+                        velvet: '#2D0A0A',
+                        slateSteel: '#1A1C1E',
+                        neonAmber: '#FFBF00',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'flicker': 'flicker 2s infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        flicker: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.8 },
+                            '52%': { opacity: 0.9 },
+                            '54%': { opacity: 0.7 },
+                        },
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #E5E7EB;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.08;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .anamorphic-frame {
+            aspect-ratio: 2.39 / 1;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-body selection:bg-goldLeaf selection:text-obsidian">
+    <div class="grain-overlay"></div>
+
+    <!-- Header / Title Section -->
+    <header class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-obsidian/40 to-obsidian z-10"></div>
+        <div class="z-20 space-y-4">
+            <p class="font-mono text-goldLeaf tracking-[0.5em] text-xs uppercase animate-pulse-slow">Confidential // MI6 Strategic Dossier</p>
+            <h1 class="font-display italic text-6xl md:text-9xl text-white font-bold leading-tight">First Light</h1>
+            <p class="font-mono text-slate-400 text-sm max-w-2xl mx-auto">Integration of Lana Del Rey Sonic Assets into Bond IP Experience: Protocol 007-LDR</p>
+            <div class="h-1 w-24 bg-goldLeaf mx-auto mt-8"></div>
+        </div>
+        
+        <!-- Background element: Visual Texture Mapping Mockup -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="w-full h-full animate-scanline bg-gradient-to-b from-transparent via-goldLeaf/10 to-transparent"></div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-20 space-y-32 relative">
+        
+        <!-- Objective Section: Bento Grid -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-8 md:col-span-2 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-display text-3xl text-goldLeaf mb-4 italic">Strategic Objective</h2>
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            Position "First Light" as a <span class="text-white font-bold">sensory interface</span> for the James Bond IP. We are leveraging brand equity to reduce acquisition costs and validate premium pricing through prestige-coded sonics.
+                        </p>
+                    </div>
+                    <div class="mt-8 flex gap-4 font-mono text-[10px] text-gray-500">
+                        <span>LOUDNESS: -14 LUFS</span>
+                        <span>TRUE PEAK: -1.0 dBFS</span>
+                        <span>BIT DEPTH: 12-BIT</span>
+                    </div>
+                </div>
+                <div class="bg-goldLeaf p-8 rounded-2xl text-obsidian flex flex-col justify-center items-center text-center">
+                    <span class="font-display text-6xl font-bold italic">+18%</span>
+                    <span class="font-mono text-xs uppercase tracking-wider font-bold">Projected Revenue Lift</span>
+                    <p class="text-sm mt-4 italic opacity-80">"The conversion alchemist's verdict on Day One digital revenue."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Parameters: Detailed Breakdown -->
+        <section class="space-y-12">
+            <div class="flex items-end gap-4 border-b border-white/10 pb-4">
+                <h2 class="font-display text-5xl italic text-white">Upgraded Parameters</h2>
+                <p class="font-mono text-goldLeaf mb-2 text-xs">AESTHETIC INTEGRITY // CODE: THORNE</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Parameter Card -->
+                <div class="space-y-4 group">
+                    <div class="h-0.5 bg-goldLeaf w-0 group-hover:w-full transition-all duration-700"></div>
+                    <h3 class="font-mono text-sm text-goldLeaf">01. ORCHESTRAL MASTERING</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mid-Side processing: Warmth centered at 250Hz-500Hz. Vocal presence range: 3kHz-5kHz. Target loudness: -14 LUFS.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="h-0.5 bg-goldLeaf w-0 group-hover:w-full transition-all duration-700"></div>
+                    <h3 class="font-mono text-sm text-goldLeaf">02. VISUAL TEXTURE</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">35mm Kodak Vision3 500T 5219 emulation. 0.8 strength emulsion-depth grain shader for 4K rendering.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="h-0.5 bg-goldLeaf w-0 group-hover:w-full transition-all duration-700"></div>
+                    <h3 class="font-mono text-sm text-goldLeaf">03. SPATIAL MAPPING</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">9.1.4 Dolby Atmos environmental mapping. David Arnold-arranged brass swells calibrated for 2.39:1 anamorphic frames.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="h-0.5 bg-goldLeaf w-0 group-hover:w-full transition-all duration-700"></div>
+                    <h3 class="font-mono text-sm text-goldLeaf">04. LUDOMUSICOLOGICAL</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">15ms release triggers for seamless transitions based on real-time game engine telemetry. Procedural layering of vocal stems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anamorphic Visualization Mockup -->
+        <section class="space-y-6">
+            <p class="font-mono text-xs text-center text-gray-500 uppercase tracking-widest">Live Feed Simulation // 2.39:1 Aspect Ratio</p>
+            <div class="anamorphic-frame glass-panel rounded-lg shadow-2xl flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-transparent to-obsidian opacity-60"></div>
+                <!-- Simulating a visual: Shadows, Gold Highlight, Grain -->
+                <div class="relative z-10 w-full h-full flex items-center justify-between px-20">
+                    <div class="space-y-2">
+                        <div class="w-32 h-1 bg-white/20"></div>
+                        <div class="w-48 h-1 bg-white/10"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 border border-goldLeaf rounded-full animate-ping mb-4 opacity-30"></div>
+                        <p class="font-mono text-[10px] text-goldLeaf tracking-tighter uppercase">Target Locked: -1.0 dBFS Peak</p>
+                    </div>
+                    <div class="space-y-2 text-right">
+                        <div class="w-32 h-1 bg-goldLeaf/20 ml-auto"></div>
+                        <div class="w-48 h-1 bg-goldLeaf/10 ml-auto"></div>
+                    </div>
+                </div>
+                <!-- Aesthetic silhouette hint -->
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-goldLeaf/5 blur-[120px]"></div>
+            </div>
+        </section>
+
+        <!-- Analysis Perspectives: Tabs/Cards -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Mercer -->
+            <div class="glass-panel p-10 rounded-3xl border-l-4 border-l-goldLeaf">
+                <h3 class="font-mono text-xs text-goldLeaf mb-2">PERSPECTIVE: MERCER // THE ALCHEMIST</h3>
+                <h4 class="font-display text-4xl italic text-white mb-6">Conversion Funnel Mechanics</h4>
+                <div class="space-y-6">
+                    <div class="bg-white/5 p-4 rounded-lg">
+                        <h5 class="font-mono text-xs font-bold text-gray-300 mb-2 uppercase">A/B Testing Logic</h5>
+                        <table class="w-full text-xs font-mono">
+                            <tr class="text-gray-500 border-b border-white/10">
+                                <th class="text-left py-2">Variant</th>
+                                <th class="text-left py-2">Metric</th>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-white">9.1.4 Spatial Mix</td>
+                                <td class="py-2 text-goldLeaf">ARPU (Audio Gear)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-white">12-bit Color Grade</td>
+                                <td class="py-2 text-goldLeaf">Pre-order Velocity</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="text-gray-400 italic text-sm">"The combination of 15ms release triggers and 12-bit color pipeline justifies a premium market position."</p>
+                </div>
+            </div>
+
+            <!-- Sloane -->
+            <div class="glass-panel p-10 rounded-3xl border-l-4 border-l-slate-400">
+                <h3 class="font-mono text-xs text-slate-400 mb-2">PERSPECTIVE: SLOANE // THE WHISPERER</h3>
+                <h4 class="font-display text-4xl italic text-white mb-6">The Architecture of Glamorous Decay</h4>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p><span class="text-goldLeaf font-bold">The Pain:</span> Modern action games suffer from synthetic perfection and emotional weightlessness.</p>
+                    <p><span class="text-goldLeaf font-bold">The Solution:</span> Noir-Pop Espionage. Selling the interactive melancholia of a seasoned operative.</p>
+                    <p class="text-sm border-t border-white/10 pt-4">"Lana is the subconscious of 007 rendered audible—an emotional architect for the fractured mechanism."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Reel Surgeon: Timeline -->
+        <section class="space-y-12">
+            <div class="text-center">
+                <h2 class="font-display text-5xl italic text-white inline-block relative">
+                    Deployment Sequence
+                    <span class="block h-1 w-full bg-goldLeaf absolute -bottom-4 left-0"></span>
+                </h2>
+                <p class="font-mono text-xs text-gray-500 mt-10 uppercase tracking-widest">60-Second High-Retention Deployment</p>
+            </div>
+
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <!-- Timeline Items -->
+                <div class="flex gap-8 group">
+                    <div class="font-mono text-goldLeaf text-xl pt-1">00:00</div>
+                    <div class="glass-panel p-6 rounded-xl flex-1 group-hover:bg-goldLeaf/5 transition-colors">
+                        <h4 class="font-bold text-white mb-2 uppercase text-sm tracking-widest">The Incision</h4>
+                        <p class="text-gray-400 text-sm">Visual: 0.005 nits black floor. Sudden snap to 35mm film reel. Audio: Isolated vocal stem (3kHz-5kHz) dry.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group">
+                    <div class="font-mono text-goldLeaf text-xl pt-1">00:12</div>
+                    <div class="glass-panel p-6 rounded-xl flex-1 group-hover:bg-goldLeaf/5 transition-colors">
+                        <h4 class="font-bold text-white mb-2 uppercase text-sm tracking-widest">The Arnold Injection</h4>
+                        <p class="text-gray-400 text-sm">Visual: Procedural Walther PPK assembly. Audio: David Arnold brass flares mapped to 9.1.4 Atmos heights.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group">
+                    <div class="font-mono text-goldLeaf text-xl pt-1">00:40</div>
+                    <div class="glass-panel p-6 rounded-xl flex-1 group-hover:bg-goldLeaf/5 transition-colors">
+                        <h4 class="font-bold text-white mb-2 uppercase text-sm tracking-widest">The Chromatic Peak</h4>
+                        <p class="text-gray-400 text-sm">Visual: 12-bit color flashes, D65 white point. Audio: Lana vocal as a hauntological texture under the Bond leitmotif.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group">
+                    <div class="font-mono text-goldLeaf text-xl pt-1">00:60</div>
+                    <div class="glass-panel p-6 rounded-xl flex-1 group-hover:bg-goldLeaf/5 transition-colors">
+                        <h4 class="font-bold text-white mb-2 uppercase text-sm tracking-widest">The Closure</h4>
+                        <p class="text-gray-400 text-sm">Visual: Title Card: FIRST LIGHT: 007. Final logo flicker at 24fps. Audio: Total atmospheric drop-off.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Verdict -->
+        <section class="relative overflow-hidden rounded-3xl p-12 bg-gradient-to-br from-velvet to-obsidian border border-goldLeaf/30">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <svg width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="currentColor" class="text-goldLeaf">
+                    <circle cx="50" cy="50" r="45" stroke-dasharray="10 5" />
+                    <circle cx="50" cy="50" r="25" />
+                    <path d="M50 10 V90 M10 50 H90" />
+                </svg>
+            </div>
+            <div class="relative z-10 max-w-2xl">
+                <h3 class="font-mono text-goldLeaf text-xs mb-4 uppercase tracking-[0.4em]">Final Mission Directive</h3>
+                <h2 class="font-display text-5xl text-white mb-6 italic">Approved for Integration</h2>
+                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                    The intersection of Del Rey's "narcotic allure" and rigorous ludic engineering transforms a ballad into a tactical asset. "First Light" is no longer just a song—it is the sound a ghost makes when caught in 12-bit dynamic range optimization.
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="h-10 w-10 rounded-full bg-goldLeaf flex items-center justify-center font-mono text-obsidian font-bold">00</div>
+                    <div>
+                        <p class="font-mono text-xs uppercase text-white">Authorized by Intelligence Agency</p>
+                        <p class="font-mono text-[10px] text-gray-500 uppercase">Ref: Tactical Asset First Light</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- UI Interaction Script -->
+    <script>
+        // Micro-animations for interactivity
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = panel.getBoundingClientRect();
+                const x = (e.clientX - left) / width;
+                const y = (e.clientY - top) / height;
+                
+                panel.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(212, 175, 55, 0.08) 0%, rgba(26, 28, 30, 0.7) 80%)`;
+            });
+            
+            panel.addEventListener('mouseleave', () => {
+                panel.style.background = `rgba(26, 28, 30, 0.7)`;
+            });
+        });
+    </script>
+</body>
+</html>
