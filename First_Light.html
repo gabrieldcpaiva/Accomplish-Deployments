@@ -292,13 +292,13 @@
     </main>
 
     <!-- UI Interaction Script -->
+    <script src="src/utils/gradient-logic.js"></script>
     <script>
         // Micro-animations for interactivity
         document.querySelectorAll('.glass-panel').forEach(panel => {
             panel.addEventListener('mousemove', (e) => {
-                const { left, top, width, height } = panel.getBoundingClientRect();
-                const x = (e.clientX - left) / width;
-                const y = (e.clientY - top) / height;
+                const rect = panel.getBoundingClientRect();
+                const { x, y } = calculateGradientCoordinates(e.clientX, e.clientY, rect);
                 
                 panel.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(212, 175, 55, 0.08) 0%, rgba(26, 28, 30, 0.7) 80%)`;
             });
