@@ -15,6 +15,14 @@ describe('calculateGradientCoordinates', () => {
         expect(result).toEqual(expected);
     });
 
+    test('handles mouse outside the element (positive out-of-bounds coordinates)', () => {
+        const rect = { left: 100, top: 100, width: 200, height: 200 };
+        const clientX = 400;
+        const clientY = 400;
+        const result = calculateGradientCoordinates(clientX, clientY, rect);
+        expect(result).toEqual({ x: 1.5, y: 1.5 });
+    });
+
     test('handles zero width or height to avoid division by zero', () => {
         const rect = { left: 100, top: 100, width: 0, height: 200 };
         const result = calculateGradientCoordinates(200, 200, rect);
